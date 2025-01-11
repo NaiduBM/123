@@ -94,3 +94,74 @@ Both scripts can be configured by modifying their respective configuration secti
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+- Node.js with Express
+- Docker
+- Kubernetes
+- GitHub Actions
+- cert-manager for TLS
+
+## Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start the application
+npm start
+```
+
+The application will be available at `http://localhost:3000`
+
+## Deployment
+
+The application is automatically deployed through GitHub Actions when changes are pushed to the main branch. The pipeline:
+
+1. Builds the Docker image
+2. Pushes to GitHub Container Registry
+3. Deploys to Kubernetes
+
+### Manual Deployment
+
+If needed, you can deploy manually:
+
+```bash
+kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/service.yaml
+kubectl apply -f k8s/ingress.yaml
+```
+
+## Architecture
+
+- **Deployment**: 3 replicas for high availability
+- **Service**: LoadBalancer type for traffic distribution
+- **Ingress**: TLS-enabled access through wisecow.example.com
+- **Resources**: CPU and memory limits configured for optimal performance
+
+## Configuration
+
+The application uses the following environment variables:
+- `PORT`: Server port (default: 3000)
+
+## Infrastructure Requirements
+
+- Kubernetes cluster with cert-manager
+- DNS configuration for the domain
+- GitHub Container Registry access
+
+## License
+
+Create README.md for System Monitoring Scripts
+
+npm install
+README.md
+I've created a README.md file that:
+
+Describes the two chosen monitoring tools (System Health Monitor and Application Health Checker)
+Provides clear usage instructions
+Lists requirements and installation steps
+Includes configuration details
+Adds standard sections for contributing and licensing
+
+[MIT License](LICENSE)
