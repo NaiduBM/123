@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: wisecow
-        image: ghcr.io/${GITHUB_REPOSITORY}/wisecow:latest
+        image: ghcr.io/${{ github.repository_owner | lower }}/wisecow-application/wisecow:latest
         ports:
         - containerPort: 3000
         resources:
