@@ -1,15 +1,13 @@
 {
-  "name": "wisecow",
-  "version": "1.0.0",
+  "name": "node-starter",
   "private": true,
   "scripts": {
-    "start": "node index.js",
-    "test": "jest"
+    "monitor": "node systemMonitor.js",
+    "health-check": "node healthChecker.js"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "node-fetch": "^3.3.2",
+    "systeminformation": "^5.21.7"
   },
-  "devDependencies": {
-    "jest": "^29.7.0"
-  }
+  "type": "module"
 }
